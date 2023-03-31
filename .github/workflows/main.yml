@@ -2,8 +2,9 @@ name: Deploy Angular App
 
 on:
   push:
-    tags:
-      - "v*"
+    branches: [main]
+    # tags:
+    # - "v*"
 
 jobs:
   deploy:
@@ -23,7 +24,7 @@ jobs:
 
       - name: Build Angular app
         run: |
-          ng build --configuration=production --base-href \"https://fd-sk.github.io/gitHubActionsTest/\""
+          ng build --configuration=production --base-href "https://fd-sk.github.io/gitHubActionsTest/"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
