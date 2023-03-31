@@ -21,7 +21,7 @@ jobs:
         run: npm install -g @angular/cli@12.2.7 && npm install
 
       - name: Build Angular app
-        run: ng run build-actions
+        run: npm run build-actions
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
