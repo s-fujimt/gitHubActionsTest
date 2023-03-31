@@ -11,6 +11,4 @@ jobs:
     steps:
       - name: Exit if not on main branch
         run: echo github.ref
-        if: endsWith( github.ref, 'main' ) != true
-        run: exit -1
       - run: echo foo
