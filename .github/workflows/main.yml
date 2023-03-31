@@ -18,13 +18,10 @@ jobs:
           node-version: "14.18.1"
 
       - name: Install dependencies
-        run: |
-          npm install
-          npm install -g @angular/cli
+        run: npm install
 
       - name: Build Angular app
-        run: |
-          ng build --configuration=production --base-href "https://fd-sk.github.io/gitHubActionsTest/"
+        run: ng run build-actions
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
