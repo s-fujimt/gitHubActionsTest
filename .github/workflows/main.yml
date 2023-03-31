@@ -6,9 +6,28 @@ on:
       - "v*"
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Exit if not on main branch
-        run: echo github.ref
-      - run: echo foo
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "14.18.1"
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npm install -g @angular/cli
+
+      - name: Build Angular app
+        run: |
+          ng build --configuration=production --base-href \"https://fd-sk.github.io/gitHubActionsTest/\""
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: dist
+          github-token: ${{ secrets.GITHUB_TOKEN }}
