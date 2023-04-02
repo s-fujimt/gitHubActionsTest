@@ -2,12 +2,11 @@ name: Codesign Windows App
 
 on:
   push:
-    branches: [main]
-    # tags:
-    # - "v*"
+    tags:
+      - "v*"
 
 jobs:
-  build:
+  release:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
@@ -26,12 +25,5 @@ jobs:
           build_script_name: "electron:windows-actions"
           github_token: ${{ secrets.github_token }}
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
-
-      # - name: Codesign exe
-      #   run: |
-      #     echo ${{ secrets.CODESIGN }} | base64 -d > codesign.pfx
-      #     pwsh -Command "& '.\codesign.ps1' -cert .\codesign.pfx -password '${{ secrets.PASSWORD }}' -path .\dist_electron\win-unpacked"
-      #     mv .\dist_electron\win-unpacked\my-app.exe .\dist_electron\win-unpacked\latest.yml
-
-      #   windows_certs: ${{ secrets.CODESIGN }}
-      #   windows_certs_password: ${{ secrets.PASSWORD }}
+          windows_certs: ${{ secrets.CODESIGN }}
+          windows_certs_password: ${{ secrets.PASSWORD }}
