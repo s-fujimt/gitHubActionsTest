@@ -2,6 +2,7 @@ name: Codesign Windows App
 
 on:
   push:
+    # branches: [main]
     tags:
       - "v*"
 
