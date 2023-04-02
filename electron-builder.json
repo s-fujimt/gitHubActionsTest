@@ -23,37 +23,29 @@
     {
       "from": "dist",
       "to": "app",
-      "filter": [
-        "**/*"
-      ]
+      "filter": ["**/*"]
     }
   ],
   "win": {
     "icon": "dist/assets/icons",
     "publisherName": "MALME INC.",
-    "appId": "com.structuralengine.actions",
-    "files": [
-      "dist/**/*"
-    ],
+    "appId": "com.fd-sk.actions",
+    "files": ["dist/**/*"],
     "target": "nsis",
     "asar": false
   },
   "mac": {
     "icon": "dist",
-    "target": [
-      "dmg"
-    ]
+    "target": ["dmg"]
   },
   "linux": {
     "icon": "dist",
-    "target": [
-      "AppImage"
-    ]
+    "target": ["AppImage"]
   },
   "publish": [
     {
       "provider": "github",
-      "owner": "structuralengine",
+      "owner": "fd-sk",
       "repo": "WebDanforJS"
     }
   ]
