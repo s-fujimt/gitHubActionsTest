@@ -1,6 +1,6 @@
 {
   "name": "git-hub-actions-test",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "scripts": {
     "ng": "ng",
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && ng serve",
