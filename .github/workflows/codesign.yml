@@ -22,6 +22,10 @@ jobs:
 
       - name: Build Windows App
         run: npm run electron:windows-actions
+
+      - name: show files
+        run: ls -la
+
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
