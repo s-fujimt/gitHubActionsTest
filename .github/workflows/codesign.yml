@@ -26,9 +26,9 @@ jobs:
           build_script_name: "build:win"
           github_token: ${{ secrets.github_token }}
 
-      # - name: Show contents of latest.yml
-      #   run: |
-      #     cat dist/latest.yml
+      - name: Show contents of latest.yml
+        run: |
+          cat dist/latest.yml
 
       # release: ${{ startsWith(github.ref, 'refs/tags/v') }}
       # windows_certs: ${{ secrets.CODESIGN }}
