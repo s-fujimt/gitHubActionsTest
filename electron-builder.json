@@ -46,7 +46,7 @@
     {
       "provider": "github",
       "owner": "fd-sk",
-      "repo": "WebDanforJS"
+      "repo": "GitHubActionsTest"
     }
   ]
 }

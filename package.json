@@ -1,5 +1,5 @@
 {
-  "name": "web-dan-for-js",
+  "name": "git-hub-actions-test",
   "version": "1.6.3",
   "scripts": {
     "ng": "ng",
@@ -10,6 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:dev": "concurrently \"ng build --delete-output-path=false --watch\" \"webpack --config webpack.electron.dev.config.js --watch\"",
+    "build:win": "npm run build:prod",
     "start:dev": "electron dist/shell.js",
     "electron:windows": "set NODE_OPTIONS=--openssl-legacy-provider && npm run build:prod && npx electron-builder build --windows",
     "electron:windows-actions": "npm run build:prod && npx electron-builder build --windows",
@@ -18,7 +19,7 @@
     "filecopy1": "node -e \"require('fs').copyFileSync('dev-app-update.yml', 'dist/dev-app-update.yml')\"",
     "filecopy2": "node -e \"require('fs').copyFileSync('app-update.yml', 'dist/app-update.yml')\""
   },
-  "description": "WebDanforJS",
+  "description": "GitHubActionsTest",
   "author": {
     "name": "MALME INC.",
     "email": "info@malme.co.jp"

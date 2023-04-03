@@ -23,7 +23,7 @@ jobs:
       - name: Build Windows app
         uses: samuelmeuli/action-electron-builder@v1
         with:
-          build_script_name: "electron:windows-actions"
+          build_script_name: "build:win"
           github_token: ${{ secrets.github_token }}
 
       # - name: Show contents of latest.yml
