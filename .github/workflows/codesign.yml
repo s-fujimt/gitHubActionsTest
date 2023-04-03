@@ -24,7 +24,7 @@ jobs:
         run: npm run electron:windows-actions
 
       - name: show files
-        run: ls
+        run: ls release
 
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
