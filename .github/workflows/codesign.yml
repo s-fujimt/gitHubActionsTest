@@ -21,7 +21,7 @@ jobs:
         run: npm install -g @angular/cli@12.2.7 && npm install
 
       - name: Build Windows App
-        run: npm run electron:windows
+        run: npm run electron:windows-actions
 
       # - name: Build Windows app
       #   uses: samuelmeuli/action-electron-builder@v1
