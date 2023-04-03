@@ -22,9 +22,8 @@ jobs:
 
       - name: Build Windows App
         run: npm run electron:windows-actions
-
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Build Windows app
       #   uses: samuelmeuli/action-electron-builder@v1
