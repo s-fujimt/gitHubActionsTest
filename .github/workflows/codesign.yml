@@ -23,8 +23,8 @@ jobs:
       - name: Build Windows App
         run: npm run electron:windows-actions
 
-      - name: show files
-        run: ls release
+      - name: show content of release/latest.yml
+        run: cat release/latest.yml
 
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
