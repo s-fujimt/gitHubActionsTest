@@ -21,12 +21,13 @@ jobs:
         run: npm install -g @angular/cli@12.2.7 && npm install
 
       - name: Build Windows app
-        uses: samuelmeuli/action-electron-builder@v1
+        uses: samuelmeuli/action-electron-builder@v1.6.0
         with:
           build_script_name: "build:win"
           github_token: ${{ secrets.github_token }}
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
-          args: --publish=always
+          # args: "-p always"
+
           # windows_certs: ${{ secrets.CODESIGN }}
           # windows_certs_password: ${{ secrets.PASSWORD }}
 
