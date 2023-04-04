@@ -20,27 +20,14 @@ jobs:
       - name: Install dependencies
         run: npm install -g @angular/cli@12.2.7 && npm install
 
-      #   - name: Build Windows App
-      #     run: npm run electron:windows-actions
-
-      #   - name: show content of release/latest.yml
-      #     run: cat release/latest.yml
-
-      # env:
-      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Build Windows app
         uses: samuelmeuli/action-electron-builder@v1
         with:
           build_script_name: "build:win"
           github_token: ${{ secrets.github_token }}
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
-
-      - name: show content
-        run:
-          grep "url:" release/latest.yml   | awk '{print $2}'
-
           # windows_certs: ${{ secrets.CODESIGN }}
           # windows_certs_password: ${{ secrets.PASSWORD }}
 
-      # web-dan-for-js Setup 1.6.1.exe
+      - name: show content
+        run: awk '/path:/ {print $2}' release/latest.yml
