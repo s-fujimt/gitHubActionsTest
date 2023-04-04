@@ -34,12 +34,12 @@ jobs:
         with:
           build_script_name: "build:win"
           github_token: ${{ secrets.github_token }}
+          release: ${{ startsWith(github.ref, 'refs/tags/v') }}
 
       - name: show content
         run:
           grep "url:" release/latest.yml   | awk '{print $2}'
 
-          # release: ${{ startsWith(github.ref, 'refs/tags/v') }}
           # windows_certs: ${{ secrets.CODESIGN }}
           # windows_certs_password: ${{ secrets.PASSWORD }}
 
