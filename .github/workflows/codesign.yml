@@ -37,7 +37,7 @@ jobs:
 
       - name: show content
         run:
-          ls release
+          grep "url:" release/latest.yml   | awk '{print $2}'
 
           # release: ${{ startsWith(github.ref, 'refs/tags/v') }}
           # windows_certs: ${{ secrets.CODESIGN }}
